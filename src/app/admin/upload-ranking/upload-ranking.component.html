@@ -1,0 +1,18 @@
+<h3>Chargement du classement</h3>
+
+
+<p>Cliquez sur browse et sélectionez le fichier Json à charger.</p>
+
+<div class="panel-body" *ngIf="success==false">
+    <!--<input type="file" [ng-file-select]="options" (onUpload)="handleUpload($event)">-->
+    <!--<input type="file" ngFileSelect [options]="options" (onUpload)="handleUpload($event)">-->
+</div>
+<div *ngIf="success" class="alert alert-success">
+    Le classement a été chargé avec succès.
+</div>
+
+<div *ngIf="error" class="alert alert-warning">
+    {{ uploadFile | json }}
+</div>
+
+<button (click)="goBack()" class="btn btn-default">Retour</button>

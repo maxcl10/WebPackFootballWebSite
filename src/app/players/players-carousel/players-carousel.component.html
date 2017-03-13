@@ -1,0 +1,25 @@
+<!--<div id="playersCarousel" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+        <li *ngFor="let player of players" data-target="#playersCarousel" (data-slide-to)="getIndex(player)"></li>
+    </ol>
+
+
+    <div class="carousel-inner">
+        <div *ngFor="let player of players" class="item">
+            <img [src]="'../images/players/' + player.firstName + '_' + player.lastName + '.jpg'" class="img-responsive img-thumbnail"
+            />
+            <div>{{player.firstName}}</div>
+        </div>
+    </div>
+
+
+    <a class="carousel-control left" href="#playersCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right" href="#playersCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>-->
+
+<player-details-small [player]='player'></player-details-small>

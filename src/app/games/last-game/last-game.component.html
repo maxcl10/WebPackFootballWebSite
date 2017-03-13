@@ -1,0 +1,23 @@
+<span *ngIf="game != null">
+    
+<div>
+    <span>    
+        <img [src]="game.homeTeamLogoUrl" [title]="game.HomeTeam"> <span class="hidden-sm">{{game.HomeTeam}}</span>
+</span>
+<span class="pull-right"> 
+     <span class="hidden-sm">{{game.AwayTeam}}</span><img [src]="game.awayTeamLogoUrl" [title]="game.AwayTeam">
+</span>
+</div>
+<div class="text-center emphasize">    
+        {{game.HomeTeamScore}} - {{game.AwayTeamScore}}    
+</div>
+<div>
+    <label class="hidden-sm">
+             {{game.MatchDate | frDate:"longDate"}}
+                
+        </label>
+    <label class="pull-right">
+               {{game.Championship}}
+         </label>
+</div>
+</span>

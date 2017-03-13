@@ -1,0 +1,47 @@
+<div class="well" *ngIf="isToday">
+    <div *ngIf="game != null">
+        <h3><i class="fa fa-futbol-o" aria-hidden="true" style="margin-right:10px" ></i>Jour de match</h3>
+        <div class="row" *ngIf="game.Championship == 'Championnat'">
+            <div class="text-center">
+                <div class="text-uppercase">
+                    {{game.Championship}} Excellence Volkswagen 68
+                </div>
+                <img src="images/lafa.png" />
+                <img src="images/volkswagen_logo.png" />
+            </div>
+        </div>
+         <div class="row" *ngIf="game.Championship == 'Coupe de France'">
+            <div class="text-center">
+                <div class="text-uppercase">
+                    {{game.Championship}}
+                </div>
+                <img src="images/coupe_de_france.png" />               
+            </div>
+        </div>
+         <div class="row" *ngIf="game.Championship == 'Coupe d\'Alsace'">
+            <div class="text-center">
+                <div class="text-uppercase">
+                    {{game.Championship}}
+                </div>
+                <img src="images/coupe_d_alsace.png" />               
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xs-6 text-center">
+                <img [src]="game.homeTeamLogoUrl" [title]="game.HomeTeam">
+                <br/>
+                <span>{{game.HomeTeam}}</span>
+            </div>
+            <div class="col-md-6 col-xs-6 text-center">
+                <img [src]="game.awayTeamLogoUrl" [title]="game.AwayTeam">
+                <br/>
+                <span>  {{game.AwayTeam}}</span>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 20px">
+            Aujourd'hui à <strong>{{game.MatchDate | frDate:"time"}}</strong>!<br/> Venez nombreux encourager les mauves!
+        </div>
+    </div>
+</div>
+
+<!----> 

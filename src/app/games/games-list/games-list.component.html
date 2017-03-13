@@ -1,0 +1,58 @@
+<h2>Matches</h2>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table table-striped table-bigger">
+
+            <tr *ngFor="let game of games; let i=index;">
+                <td class="hidden-xs">
+                    {{game.MatchDate | frDate:'shortDate'}}
+                </td>
+                <td class="visible-xs">
+                    {{game.MatchDate | frDate:'dd/MM'}}<br>
+                    {{game.MatchDate | frDate:'shortTime'}}
+                </td>
+                <td class="hidden-sm hidden-xs">
+                    <span class="glyphicon glyphicon-time"></span> {{game.MatchDate | frDate:'time' }}
+                </td>
+                <td *ngIf="game.HomeTeam != 'Uffheim F.C.'">
+                    E
+                </td>
+                <td *ngIf="game.AwayTeam != 'Uffheim F.C.'">
+                    D
+                </td>
+                <td *ngIf="game.HomeTeam != 'Uffheim F.C.'">
+                    <img [src]="game.homeTeamLogoUrl" >
+                    {{game.HomeTeam}}
+                </td>
+                <td *ngIf="game.AwayTeam != 'Uffheim F.C.'">
+                    <img [src]="game.awayTeamLogoUrl" >
+                    {{game.AwayTeam}}
+                   
+                </td>
+
+                <td>
+                    <strong>
+                    <span *ngIf="game.HomeTeamScore != null && game.AwayTeamScore != null" class="badge" [ngClass]="{'badge-success':(game.HomeTeamScore>game.AwayTeamScore && game.HomeTeam == 'Uffheim F.C.') ||
+                        (game.HomeTeamScore<game.AwayTeamScore && game.AwayTeam == 'Uffheim F.C.'), 
+                        'badge-danger':(game.HomeTeamScore<game.AwayTeamScore && game.HomeTeam == 'Uffheim F.C.') ||
+                        (game.HomeTeamScore>game.AwayTeamScore && game.AwayTeam == 'Uffheim F.C.'),
+                        'badge-default':game.HomeTeamScore==game.AwayTeamScore}">
+                        {{game.HomeTeamScore}} - {{game.AwayTeamScore}}
+                        </span>
+                    </strong>
+                </td>
+
+                <td class="hidden-xs">
+                    <span class="pull-right">
+                    {{game.Championship}}
+                    </span>
+                </td>
+            </tr>
+        </table>
+
+        <!--<div class="alert alert-info">
+            La suite du programme du championnat arrive bientôt.
+        </div>-->
+    </div>
+</div>

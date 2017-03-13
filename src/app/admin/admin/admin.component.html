@@ -1,0 +1,133 @@
+<h2>Admin</h2>
+
+<ul class="nav nav-pills nav-justified">
+    <li data-toggle="tab" class="active" href="#articles"><a>Articles</a></li>
+    <li data-toggle="tab" href="#players"><a>Joueurs</a></li>
+    <li data-toggle="tab" href="#games"><a>Matchs</a></li>
+    <li data-toggle="tab" href="#ranking"><a>Classement</a></li>
+        <li data-toggle="tab" href="#team"><a>Equipes</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="articles" class="tab-pane fade in active">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a class="btn btn-success pull-right" href="" [routerLink]="['newArticle']">
+                    <span class="glyphicon glyphicon-plus"></span> Article
+                </a>
+
+                <h4>{{articlesCount}} articles</h4>
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover table-clickable">
+                    <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Auteur</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let article of articles" (click)="onselect(article)">
+                            <td>
+                                {{article.title}}
+                            </td>
+                            <td>
+                                {{article.publisher}}
+                            </td>
+                            <td>
+                                {{article.publishedDate | date:"dd/MM/yyyy"}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="players" class="tab-pane fade">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a class="btn btn-success pull-right" href="" [routerLink]="['newPlayer']">
+                    <span class="glyphicon glyphicon-plus"></span> Joueur
+                </a>
+                <h4>{{playersCount}} Joueurs</h4>
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover table-clickable">
+                    <thead>
+                        <tr>
+                            <th>Joueur</th>
+                            <th>Poste</th>
+                            <th>Date de naissance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let player of players" (click)="onPlayerSelect(player)">
+                            <td>
+                                {{player.firstName}} {{player.lastName}}
+                            </td>
+                            <td>
+                                {{player.position}}
+                            </td>
+                            <td>
+                                {{player.dateOfBirth | date:'dd/MM/yyyy'}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="games" class="tab-pane fade">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a class="btn btn-success" href="" [routerLink]="['newGame']">
+                    <span class="glyphicon glyphicon-plus"></span> Matches
+                </a>
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover table-clickable">
+                    <thead>
+                        <tr>
+                            <th>Domicile</th>
+                            <th>Extérieur</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <tr *ngFor="let game of games" (click)="onGameSelect(game)">
+                            <td>
+                                {{game.HomeTeam}}
+                            </td>
+                            <td>
+                                {{game.AwayTeam}}
+                            </td>
+                            <td>
+                                {{game.HomeTeamScore}} - {{game.AwayTeamScore}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="team" class="tab-pane fade">
+        <edit-team [players]="players"></edit-team>
+    </div>
+
+
+
+    <div id="ranking" class="tab-pane fade">
+        <a class="btn btn-success" href="" [routerLink]="['uploadRanking']">Upload Ranking</a>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<h2>Accueil</h2>
+
+
+
+<div class="panel panel-body">
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for carousel items -->
+
+        <div class="carousel-inner ">
+            <div class="item active">
+                <img class="img-thumbnail" src="../../../assets/img/fcu2.jpg" alt="First Slide">
+            </div>
+            <div class="item">
+                <img class="img-thumbnail" src="../../../assets/img/fcu1.jpg" alt="Second Slide">
+            </div>
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</div>
+<div *ngIf="loaded == false">
+    <img src="../../../assets/img/loader_gif.gif" width="150px" class="center-block" />
+    <p class="text-center">Chargement...</p>
+</div>
+
+
+    <today-game></today-game>
+
+
+<div class="visible-xs ">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4><a href="" [routerLink]="['games']">Prochain match</a></h4>
+        </div>
+        <div class="panel-body">
+            <next-game></next-game>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4><a href="" [routerLink]="['games']">Dernier match</a></h4>
+        </div>
+        <div class="panel-body">
+            <last-game></last-game>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div *ngIf="loaded == true" class="animated fadeIn">
+    <h2 class="visible-xs">News</h2>
+    <article *ngFor="let article of articles" style="margin-top: 15px" class="partialHidden" >
+        <div class="panel panel-default ">
+            <div class="panel-heading">
+                <div class="fb-share-button pull-right" data-href="http://fcuffheim.azurewebsites.net" data-layout="button_count" data-size="small"
+                    data-mobile-iframe="true">
+                    <a class="fb-xfbml-parse-ignore" target="_blank" [href]="'https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F.fcuffheim.azurewebsites.net/article/' + article.id + '%2F&amp;src=sdkpreparse'">Partager</a>
+                </div>
+                <h4><a href="" [routerLink]="['/article',article.id]">{{article.title}}</a></h4>
+            </div>
+            <div class="panel-body">
+                <span [innerHTML]="article.body"></span>
+                <!--{{article.body}}-->
+
+            </div>
+            <!--<div class="panel-footer" style="text-align: right">
+                <label>Publié le {{article.publishedDate | date:"dd MMMM yyyy" }} par {{article.publisher}}</label>
+            </div>-->
+              <a  href="" [routerLink]="['/article',article.id]" style="position: absolute; bottom: 10px; right: 10px; z-index: 99999" class="pull-right" >Suite...</a>
+        </div>
+      
+    </article>
+</div>

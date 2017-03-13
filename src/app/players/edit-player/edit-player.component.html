@@ -1,0 +1,66 @@
+<h2>Nouveau joueur {{player.firstName}} {{player.lastName}}</h2>
+
+
+
+<div class="form-group">
+    <label>Prénom</label>
+    <input class="form-control" placeholder="Prénom" [(ngModel)]='player.firstName' type="text">
+</div>
+<div class="form-group ">
+    <label>Nom</label>
+    <input class="form-control" placeholder="Nom" [(ngModel)]='player.lastName' type="text">
+</div>
+<div class="form-group ">
+    <label>Poste</label>
+    <select class="form-control" [(ngModel)]='player.position'>
+            <option value="">Select</option>
+            <option value="Gardien">Gardien</option>
+            <option value="Defenseur">Defenseur</option>
+            <option value="Milieu">Milieu</option>
+            <option value="Attaquant">Attaquant</option>            
+        </select>
+</div>
+<div class="form-group ">
+    <label>Date de Naissance</label>
+    <input class="form-control" placeholder="Date de Naissance" [(ngModel)]='player.dateOfBirth' type="datetime">
+</div>
+<div class="form-group ">
+    <label>Taille (cm)</label>
+    <input class="form-control" placeholder="Taille (cm)" [(ngModel)]='player.height' type="number">
+</div>
+<div class="form-group ">
+    <label>Poids (kg)</label>
+    <input class="form-control" placeholder="Poids (kg) " [(ngModel)]='player.weight' type="number">
+</div>
+<div class="form-group ">
+    <label>Nationalité</label>
+    <input class="form-control" placeholder="Nationalité" [(ngModel)]='player.nationality' type="text">
+</div>
+<div class="form-group ">
+    <label>Surnom</label>
+    <input class="form-control" placeholder="Surnom" [(ngModel)]='player.nickname' type="text">
+</div>
+<div class="form-group ">
+    <label>Joueur préféré</label>
+    <input class="form-control" placeholder="Joueur préféré" [(ngModel)]='player.favoritePlayer' type="text">
+</div>
+<div class="form-group ">
+    <label>Equipe préférée</label>
+    <input class="form-control" placeholder="Equipe préférée" [(ngModel)]='player.favoriteTeam' type="text">
+</div>
+<div class="form-group ">
+    <label>Numéro préféré</label>
+    <input class="form-control" placeholder="Numéro préféré" [(ngModel)]='player.favoriteNumber' type="text">
+</div>
+<div class="form-group ">
+    <label>Club précédents</label>
+    <input class="form-control" placeholder="Clubs précédents" [(ngModel)]='player.previousClubs' type="text">
+</div>
+<div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+<div class="alert alert-success" *ngIf="successfull">
+    Joueur {{player.firstName}} {{player.lastName}} has been successfully saved!
+</div>
+<div>
+    <button (click)="goBack()" class="btn btn-default ">Back</button>
+    <button (click)="savePlayer() " type="submit " class="btn btn-success ">Save</button>
+</div>

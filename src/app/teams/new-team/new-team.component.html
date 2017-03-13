@@ -1,0 +1,26 @@
+<h2>Nouvel Equipe {{team.name}}</h2>
+
+<div class="panel panel-default">
+
+        <div class="panel-body">
+
+            <div class="alert alert-success" *ngIf="successfull">
+                Equipe "{{team.name}}" a été sauvé!
+            </div>
+            <div class="form-group">
+                <label>Nom</label>
+                <input required class="form-control" placeholder="Nom de l'équipe'" [(ngModel)]='team.name' type="text" ngControl="name">
+            </div>
+            <div class="form-group">
+                <label>Nom court</label>
+                <input required class="form-control" placeholder="Nom court de l'équipe'" [(ngModel)]='team.shortName' type="text" ngControl="shortName">
+            </div>            
+        </div>
+
+        <div class="panel-footer">
+            <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+            <!--<button (click)="goBack()" class="btn btn-default">Back</button>-->
+            <button (click)="saveTeam()" type="submit" class="btn pull-right btn-success">Save</button>
+        </div>
+ 
+</div>

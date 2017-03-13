@@ -1,0 +1,26 @@
+<div id="player" class="panel panel-default ">
+    <div class="panel-heading">
+        {{player.firstName}} <label class="text-uppercase bold">{{player.lastName}}</label>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <img [src]="'../../../assets/img/players/' + player.firstName + '_' + player.lastName + '.png'" style="height:115px" class="img-responsive img-thumbnail"
+                />
+            </div>
+            <div class="col-md-8">
+                <ul class="list-unstyled">
+                    <li *ngIf="player.nickname != null">Alias {{player.nickname}}</li>
+                    <li *ngIf="playerAge != 0">{{player.dateOfBirth | frDate:"dd/MM/yyyy"}} ({{playerAge}} ans)</li>
+                    <li *ngIf="player.height != null && player.height != 0">{{player.height /100 }} m</li>
+                    <li *ngIf="player.weight != null && player.weight != 0">{{player.weight}} kg</li>
+                    <li>{{player.nationality}}</li>
+                </ul>
+            </div>
+<!--| number : '1.2-2' -->
+        </div>
+        <div style="height: 30px; margin-top:5px">
+            <b>Clubs précédents: </b> {{player.previousClubs}}
+        </div>
+    </div>
+</div>

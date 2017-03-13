@@ -1,0 +1,50 @@
+<h2>Nouveau match</h2>
+
+<div class="panel panel-default">
+
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <label>Domicile</label>
+                        <select class="form-control" [(ngModel)]='game.HomeTeamId'>
+                            <option>Equipe</option>
+                            <option *ngFor="let team of teams" [value]="team.id">{{team.name}}</option>
+                            </select>
+                        <br/>
+                        <input class="form-control" placeholder="" [(ngModel)]='game.HomeTeamScore' type="number">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group ">
+                        <label>Exterieur</label>
+                        <select class="form-control" [(ngModel)]='game.AwayTeamId'>
+                            <option>Equipe</option>
+                            <option *ngFor="let team of teams" [value]="team.id">{{team.name}}</option>
+                            </select>
+                        <br/>
+                        <input class="form-control" placeholder="" [(ngModel)]='game.AwayTeamScore' type="number">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group ">
+                <label>Date</label>
+                <input class="form-control" placeholder="Date du match" [(ngModel)]='game.MatchDate' type="datetime-local">
+            </div>
+
+            <div class="form-group ">
+                <label>Competition</label>
+                <input class="form-control" placeholder="Championnat/Amical/Coupe" [(ngModel)]='game.Championship' type="text">
+            </div>
+
+        </div>
+        <div class="panel-footer">
+            <button (click)="goBack()" class="btn btn-default ">Back</button>
+            <button (click)="saveGame() " type="submit " class="btn btn-success pull-right ">Save</button>
+        </div>
+
+</div>
