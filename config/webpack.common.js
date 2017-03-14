@@ -209,11 +209,13 @@ module.exports = function (options) {
         filename: 'webpack-assets.json',
         prettyPrint: true
       }),
-      // new webpack.ProvidePlugin({
-      //   jQuery: 'jquery',
-      //   $: 'jquery',
-      //   jquery: 'jquery'
-      // }),
+
+      // Jquery
+    //    new webpack.ProvidePlugin({
+    //   jQuery: 'jquery',
+    //   $: 'jquery',
+    //   jquery: 'jquery'
+    // }),
 
       /*
        * Plugin: ForkCheckerPlugin

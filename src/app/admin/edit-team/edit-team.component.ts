@@ -3,7 +3,7 @@ import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { Player } from '../../players/shared/player.model'
 import { TeamsService } from '../../teams/shared/teams.service';
 
-import { DragulaService } from 'ng2-dragula/ng2-dragula';
+// import { DragulaService } from 'ng2-dragula/ng2-dragula';
 
 @Component({
     selector: 'edit-team',

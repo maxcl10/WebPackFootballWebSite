@@ -65,6 +65,9 @@ export class LogoService {
             case 'Azzurri Mulhouse U.S.':
             case 'Azzurri Mulhouse U.S':
                 return baseUrl + '/azzuri/azzuri_' + size + 'x' + size + '.png';
+            case 'Huningue F.C':
+            case 'Huningue A.S.':
+                return baseUrl + "/huningue/huningue_" + size + "x" + size + ".png"
             default:
                 break;
         }
