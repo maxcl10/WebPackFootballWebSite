@@ -27,7 +27,7 @@ export class SummernoteComponent {
     }
 
     ngOnInit() {
-        //todo: find workarround
+     
         // $('#baseTextArea').summernote({
         //     height: 300,
         //     callbacks: {
@@ -40,8 +40,7 @@ export class SummernoteComponent {
 
     }
 
-    onInit() {
-         //todo: find workarround
+    onInit() {       
         // $('#baseTextArea').summernote('editor.insertText', this.htmlContent);
     }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Ng2Summernote } from 'ng2-summernote/ng2-summernote';
 
 import { Article, ArticlesService } from '../shared/index';
 

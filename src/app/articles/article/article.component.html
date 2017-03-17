@@ -14,9 +14,9 @@
         {{article.publishedDate | date:"dd/MM/yyyy"}} - {{article.publisher}}
     </div>
 </div>
-<button *ngIf="isAuthenticated" class="btn btn-warning pull-right" data-toggle="modal" data-target="#myModal">Delete</button>
-<button (click)="goBack()" class="btn btn-default">Back</button>
-<button *ngIf="isAuthenticated" (click)="goToEdit()" class="btn btn-success">Edit</button>
+<button *ngIf="isAuthenticated" class="btn btn-warning pull-right" data-toggle="modal" data-target="#myModal">Supprimer</button>
+<button (click)="goBack()" class="btn btn-default">Retour</button>
+<button *ngIf="isAuthenticated" (click)="goToEdit()" class="btn btn-success">Editer</button>
 
 <!--Modal confirmation popup-->
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog">

@@ -5456,6 +5456,7 @@ button.list-group-item-danger.active:focus {
   border-top: 1px solid #ddd;
   border-bottom-right-radius: -1px;
   border-bottom-left-radius: -1px;
+  color: #ffffff;
 }
 .panel > .list-group,
 .panel > .panel-collapse > .list-group {
