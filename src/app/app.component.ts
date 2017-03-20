@@ -29,7 +29,16 @@ export class AppComponent implements OnInit {
   public teams: Team[];
   public errorMessage: string;
 
-  constructor(public appState: AppState, private teamsService: TeamsService) {
+  constructor(public appState: AppState, private teamsService: TeamsService, public router: Router) {
+
+    this.router.events.subscribe(
+            (event: Event) => {
+                if (event instanceof NavigationEnd) {
+                    //comment has been removed            
+                    ga('send', 'pageview', event.urlAfterRedirects);
+                }
+            });
+
 
   // Method to close the nav bar when clicking on a link on small screens
     $(document).on('click', '.navbar-collapse.in', function (e) {

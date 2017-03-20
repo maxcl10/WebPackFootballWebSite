@@ -73,7 +73,7 @@ import { SponsorComponent } from './sponsors/sponsor/sponsor.component';
 // import { SummernoteComponent } from './summernote.component';
 // import { UNITYTinyMCE } from './unity-tinymce';
 
-import { Ng2Summernote } from 'ng2-summernote/ng2-summernote';
+// import { Ng2Summernote } from 'ng2-summernote/ng2-summernote';
 // import { ChartsModule } from 'ng2-charts/ng2-charts';
 // import {UPLOAD_DIRECTIVES} from 'ng2-file-uploader/ng2-file-uploader';
 // import { UPLOAD_DIRECTIVES } from 'ng2-uploader/ng2-uploader';
@@ -125,7 +125,7 @@ type StoreType = {
     NewGameComponent,
     EditGameComponent,
     LeagueTablePageComponent,
-    Ng2Summernote,
+    // Ng2Summernote,
     NextGameComponent,
     PlayersCarouselComponent,
     LeagueTableSmallComponent,
