@@ -1,28 +1,28 @@
-  <!-- Website Header -->
-  <div style="background-color: #FFF">
+<!-- Website Header -->
+<div style="background-color: #FFF">
     <div class="container">
-      <div class="header">   
-        <img id="logofcu" src="../assets/img/logos/Uffheim/uffheim_120x120.png">
-        <div class="header-title siteTitle">
-          <div class="hidden-xs">
-            <div class="fb-like  pull-right" data-href="http://fcuffheim.azurewebsites.net/" data-layout="button_count" data-action="like"
-              data-size="large" data-show-faces="true" data-share="true"></div>
-            <h1>Football Club Uffheim</h1>
-            <span class="subHeader">Site officiel</span>
-          </div>
-          <div class="visible-xs">
-            <h1>F.C Uffheim</h1>
-            <div class="fb-like pull-right" style="margin-bottom: 5px; margin-right: 10px" data-href="http://fcuffheim.azurewebsites.net/"
-              data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
-            <span>Site officiel</span>
-          </div>
+        <div class="header">
+            <img id="logofcu" src="../assets/img/logos/Uffheim/uffheim_120x120.png">
+            <div class="header-title siteTitle">
+                <div class="hidden-xs">
+                    <div class="fb-like  pull-right" data-href="http://fcuffheim.azurewebsites.net/" data-layout="button_count" data-action="like"
+                        data-size="large" data-show-faces="true" data-share="true"></div>
+                    <h1>Football Club Uffheim</h1>
+                    <span class="subHeader">Site officiel</span>
+                </div>
+                <div class="visible-xs">
+                    <h1>F.C Uffheim</h1>
+                    <div class="fb-like pull-right" style="margin-bottom: 5px; margin-right: 10px" data-href="http://fcuffheim.azurewebsites.net/"
+                        data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                    <span>Site officiel</span>
+                </div>
 
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <nav id="nav" class="navbar navbar-default container-fluid">
+<nav id="nav" class="navbar navbar-default container-fluid">
 
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,30 +31,86 @@
                     <span class="icon-bar"></span>
                 </button>
     </div>
-    <div class="navbar-collapse collapse">
+    <div class="navbar-collapse collapse js-navbar-collapse">
         <div class="container">
             <ul class="nav navbar-nav menuTitle ">
                 <li> <a href="" [routerLink]="['home']">Accueil</a></li>
-                <!--<li> <a href="" [routerLink]="['team']">Equipe</a></li>-->
-                <li class="dropdown">
+                <li class="dropdown dropdown-lg">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Equipes <b class="caret"></b></a>
+
+                    <ul class="dropdown-menu dropdown-menu-lg row">
+                        <li class="col-sm-4">
+                            <ul>
+                                <li class="dropdown-header">Equipe 1</li>
+                                <li><a href="" [routerLink]="['team', 'b8bc86da-9eea-4820-a5d5-c9f57b3b7d80']">Effectif</a></li>
+                                <li><a href="" [routerLink]="['league-table']">Classement</a></li>
+                                <li><a href="" [routerLink]="['games']">Calendrier</a></li>
+                                <!--<li class="divider"></li>
+                                <li class="dropdown-header">LAFA</li>-->
+                            </ul>
+                        </li>
+                        <li class="col-sm-4">
+                            <ul>
+                                <li class="dropdown-header">Equipe 2</li>
+                                <li><a href="" [routerLink]="['team', '3707ef89-38c6-4f94-bc97-98238eaef435']">Effectif</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">LAFA</li>
+                                <li><a href="http://lafa.fff.fr/competitions/php/championnat/championnat_classement.php?sa_no=2016&cp_no=328625&ph_no=1&gp_no=5"
+                                        target="_blank">Classement</a></li>
+                                <li><a href="http://lafa.fff.fr/competitions/php/championnat/championnat_calendrier_resultat.php?cp_no=328625&ph_no=1&gp_no=5&sa_no=2016&typ_rech=equipe&cl_no=9796&eq_no=3&type_match=deux&lieu_match=deux"
+                                        target="_blank">Calendrier</a></li>
+                                <!--<li><a href="#">Button toolbar</a></li>
+							<li><a href="#">Sizing</a></li>
+							<li><a href="#">Nesting</a></li>
+							<li><a href="#">Vertical variation</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header">Button dropdowns</li>
+							<li><a href="#">Single button dropdowns</a></li>-->
+                            </ul>
+                        </li>
+                        <li class="col-sm-4">
+                            <ul>
+                                <li class="dropdown-header">Equipe 3</li>
+                                <li><a href="" [routerLink]="['team', '733388db-893d-4062-86e7-52c767c41db8']">Effectif</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">LAFA</li>
+                                <li><a href="http://lafa.fff.fr/competitions/php/championnat/championnat_classement.php?sa_no=2016&cp_no=328628&ph_no=1&gp_no=7"
+                                        target="_blank">Classement</a></li>
+                                <li><a href="http://lafa.fff.fr/competitions/php/championnat/championnat_calendrier_resultat.php?cp_no=328628&ph_no=1&gp_no=7&sa_no=2016&typ_rech=equipe&cl_no=9796&eq_no=4&type_match=deux&lieu_match=deux"
+                                        target="_blank">Calendrier</a></li>
+                                <!--<li><a href="#">Basic example</a></li>
+							<li><a href="#">Sizing</a></li>
+							<li><a href="#">Checkboxes and radio addons</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header">Navs</li>
+							<li><a href="#">Tabs</a></li>
+							<li><a href="#">Pills</a></li>
+							<li><a href="#">Justified</a></li>-->
+                            </ul>
+                        </li>
+                    </ul>
+
+                </li>
+                <!--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Equipes <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li *ngFor="let team of teams; let i = index" ><a href="" [routerLink]="['team', team.id]">Equipe {{i+1}}</a></li>                        
+                        <li *ngFor="let team of teams; let i = index"><a href="" [routerLink]="['team', team.id]">Equipe {{i+1}}</a></li>
                     </ul>
-                </li>
+                </li>-->
                 <li> <a href="" [routerLink]="['league-table']">Classement</a></li>
                 <li> <a href="" [routerLink]="['games']">Calendrier</a></li>
                 <li> <a href="" [routerLink]="['club']">Club</a></li>
                 <li> <a href="" [routerLink]="['sponsors']">Partenaires</a></li>
                 <li> <a href="" [routerLink]="['contact']">Contact</a></li>
-            </ul>          
+
+            </ul>
         </div>
     </div>
 </nav>
 
 <!--Body-->
 <div class="container body-content">
-    <div  style="margin-left: -15px; margin-right: -5px">
+    <div style="margin-left: -15px; margin-right: -5px">
         <div class="col-md-8 col-sm-9">
             <router-outlet></router-outlet>
         </div>
@@ -112,13 +168,13 @@
 <footer class="footer" style="margin-top: 20px">
     <div class="container">
         <div style="margin-top: 10px">
-            <a href="" [routerLink]="['admin']">Admin</a>            
+            <a href="" [routerLink]="['admin']">Admin</a>
             <span class="pull-right">
          @Copyright <a href="mailto:maxime.matter@hotmail.fr?subject=FCU WebSite">Marez</a>
         </span>
             <br/>
             <img src="../../assets/img/sponsors/Logo-Credit-Agricole.png" style="height:50px">
             <img src="../../assets/img/sponsors/pro&cie.png" style="height:50px">
-        </div>     
+        </div>
     </div>
 </footer>

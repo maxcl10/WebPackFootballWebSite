@@ -126,6 +126,7 @@ padding-left: 120px;
    display: block;
    margin-top: -12px;
    margin-bottom: 10px;
+   color: #555;
  }
 
  .table > tbody > tr.mauve
@@ -144,6 +145,8 @@ padding-left: 120px;
       padding-top: 65px;
     }
   
+
+
 /*
   #nav > .navbar-inner {
     border-left: 0;
