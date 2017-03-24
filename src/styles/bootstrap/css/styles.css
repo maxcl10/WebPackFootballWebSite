@@ -6847,5 +6847,12 @@ button.close {
   }
   .dropdown-menu-lg .dropdown-header {
     padding: 3px 15px !important;
+    color: #ecf0f1;
+    font-size: 14px;
+    font-weight: bold;
+  }  
+
+  .dropdown-menu-lg > li > ul > li > a{
+    color: #FFFFFF;
   }
 }
