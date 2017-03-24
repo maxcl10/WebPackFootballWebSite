@@ -1,8 +1,8 @@
-<h2>Nouveau match</h2>
+<h2>Edit Match</h2>
+
+  <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
 
 <div class="panel panel-default">
-
-
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-6">
@@ -44,6 +44,7 @@
         </div>
         <div class="panel-footer">
             <button (click)="goBack()" class="btn btn-default ">Back</button>
+            <button (click)="deleteGame()" class="btn btn-warning">Supprimer</button>
             <button (click)="saveGame() " type="submit " class="btn btn-success pull-right ">Save</button>
         </div>
 

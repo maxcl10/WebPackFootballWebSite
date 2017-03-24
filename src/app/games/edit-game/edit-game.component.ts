@@ -47,6 +47,15 @@ export class EditGameComponent implements OnInit {
             (error) => this.errorMessage = <any> error);
     }
 
+    public deleteGame()
+    {
+          this.gamesService.deleteGame(this.game.Id).subscribe(
+            (article) => {
+                this.goBack();
+            },
+            (error) => this.errorMessage = <any> error);
+    }
+
     public goBack() {
         window.history.back();
     }
