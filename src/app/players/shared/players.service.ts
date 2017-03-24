@@ -1,11 +1,9 @@
-import {Http, Response, Headers } from '@angular/http';
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import { Http, Response, Headers } from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
-import {Player} from './player.model'
-
-
+import { Player } from './player.model';
 
 @Injectable()
 export class PlayersService {
@@ -15,39 +13,36 @@ export class PlayersService {
 
     }
 
-    getplayer(id: string): Observable<Player> {
-        return this.http.get(this.playerUrl + "/" + id)
-            .map(response => response.json())
+    public getplayer(id: string): Observable<Player> {
+        return this.http.get(this.playerUrl + '/' + id)
+            .map((response) => response.json())
             .catch(this.handleError);
     }
 
-    getplayers(): Observable<Player[]> {
+    public getplayers(): Observable<Player[]> {
 
         return this.http.get(this.playerUrl)
-            .map(response => response.json())
+            .map((response) => response.json())
             .catch(this.handleError);
     }
 
-    createplayer(player: Player): Observable<Player> {
+    public createplayer(player: Player): Observable<Player> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.playerUrl, JSON.stringify(player), { headers: headers })
-            .map(response => response.json())
+        return this.http.post(this.playerUrl, JSON.stringify(player), {  headers })
+            .map((response) => response.json())
             .catch(this.handleError);
     }
 
-
-    updateplayer(player: Player): Observable<Player> {
+    public updateplayer(player: Player): Observable<Player> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.put(this.playerUrl + "/" + player.id, JSON.stringify(player), { headers: headers })
-            .map(response => response.json())
+        return this.http.put(this.playerUrl + '/' + player.id, JSON.stringify(player), {  headers })
+            .map((response) => response.json())
             .catch(this.handleError);
     }
 
-
-    deleteplayer(id: string) {
-        
-        return this.http.delete(this.playerUrl + "/" + id)
-            .map(response => response.json())
+    public deleteplayer(id: string) {
+        return this.http.delete(this.playerUrl + '/' + id)
+            .map((response) => response.json())
             .catch(this.handleError);
     }
 
@@ -59,5 +54,3 @@ export class PlayersService {
         return Observable.throw(errMsg);
     }
 }
-
-

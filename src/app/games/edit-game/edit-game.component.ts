@@ -5,7 +5,7 @@ import { Game } from '../shared/game.model';
 import { Team } from '../../teams/shared/team.model';
 import { TeamsService } from '../../teams/shared/teams.service';
 
-@Component({    
+@Component({
     selector: 'edit-game',
     templateUrl: './edit-game.component.html',
     providers: [GamesService, TeamsService]
@@ -21,14 +21,14 @@ export class EditGameComponent implements OnInit {
 
     constructor(private gamesService: GamesService, private teamsService: TeamsService, private route: ActivatedRoute) {
         this.game = new Game();
-    }    
+    }
 
     public getGame(id: string) {
         this.gamesService.getGame(id).subscribe(
             (game) => {
                 this.game = game;
             },
-            (error) => this.errorMessage = <any>error);
+            (error) => this.errorMessage = <any> error);
     }
 
     public saveGame() {
@@ -36,7 +36,7 @@ export class EditGameComponent implements OnInit {
             (article) => {
                 this.goBack();
             },
-            (error) => this.errorMessage = <any>error);
+            (error) => this.errorMessage = <any> error);
     }
 
     public getTeams() {
@@ -44,7 +44,7 @@ export class EditGameComponent implements OnInit {
             (teams) => {
                 this.teams = teams;
             },
-            (error) => this.errorMessage = <any>error);
+            (error) => this.errorMessage = <any> error);
     }
 
     public goBack() {

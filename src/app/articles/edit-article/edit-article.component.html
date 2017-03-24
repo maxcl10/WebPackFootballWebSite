@@ -12,6 +12,7 @@
         <label for="exampleInputPassword1">Content</label>
         <!--<span id="summernote" rows="20" class="form-control" placeholder="Content" >{{article.body}}</span>-->
         <!--<unity-tinymce [mceContent]="article.body" (contentChanged)="descriptionChanged($event)"></unity-tinymce>-->
+           <app-tinymce [(ngModel)]='article.body'></app-tinymce>
     </div>
     <div>
         <button (click)="goBack()" class="btn btn-default">Back</button>

@@ -1,31 +1,21 @@
-import {Component, Output, OnInit, Input} from '@angular/core';
-import { Title }     from '@angular/platform-browser';
+import { Component, Output, OnInit, Input } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
-
-
-@Component({    
+@Component({
   selector: 'contact',
   templateUrl: './contact.component.html',
-  //providers: [ArticlesService]
+  // providers: [ArticlesService]
 })
 
 export class ContactComponent implements OnInit {
 
-  errorMessage: string;
+  public errorMessage: string;
 
-  constructor( private titleService: Title) {
-    
+  constructor(private titleService: Title) {
+
   }
 
-  ngOnInit()
-  {
-     this.titleService.setTitle("F.C Uffheim - Contact");
+  public ngOnInit() {
+    this.titleService.setTitle('F.C Uffheim - Contact');
   }
-  
-   
-
-
 }
-
-
-

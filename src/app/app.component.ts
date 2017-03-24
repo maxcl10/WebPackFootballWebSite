@@ -2,12 +2,7 @@
  * Angular 2 decorators and services
  */
 
-import {
-  Component,
-  OnInit,
-  ViewEncapsulation
-} from '@angular/core';
-
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AppState } from './app.service';
 import { Router, Event, NavigationEnd } from '@angular/router';
 
@@ -32,23 +27,22 @@ export class AppComponent implements OnInit {
   constructor(public appState: AppState, private teamsService: TeamsService, public router: Router) {
 
     this.router.events.subscribe(
-            (event: Event) => {
-                if (event instanceof NavigationEnd) {
-                    //comment has been removed            
-                    ga('send', 'pageview', event.urlAfterRedirects);
-                }
-            });
+      (event: Event) => {
+        if (event instanceof NavigationEnd) {
+          // comment has been removed
+          ga('send', 'pageview', event.urlAfterRedirects);
+        }
+      });
 
-
-  // Method to close the nav bar when clicking on a link on small screens
+    // Method to close the nav bar when clicking on a link on small screens
     $(document).on('click', '.navbar-collapse.in', function (e) {
-      var JQuery: JQuery;
+      let JQuery: JQuery;
 
-      if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
+      if ($(e.target).is('a') && $(e.target).attr('class') !== 'dropdown-toggle') {
         $(this).collapse('hide');
       }
     });
-   }
+  }
 
   public ngOnInit() {
     console.log('Initial App State', this.appState.state);
@@ -57,14 +51,6 @@ export class AppComponent implements OnInit {
       (homeTeams) => {
         this.teams = homeTeams;
       },
-      (error) => this.errorMessage = <any>error);
+      (error) => this.errorMessage = <any> error);
   }
 }
-
-/*
- * Please review the https://github.com/AngularClass/angular2-examples/ repo for
- * more angular app examples that you may copy/paste
- * (The examples may not be updated as quickly. Please open an issue on github for us to update it)
- * For help or questions please contact us at @AngularClass on twitter
- * or our chat on Slack at https://AngularClass.com/slack-join
- */

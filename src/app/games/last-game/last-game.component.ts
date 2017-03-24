@@ -6,7 +6,7 @@ import { Game } from '../shared/game.model';
 
 import { LogoService } from '../../shared/services/logo.service';
 
-@Component({   
+@Component({
     selector: 'last-game',
     templateUrl: './last-game.component.html',
     providers: [GamesService, LogoService],
@@ -21,17 +21,17 @@ export class LastGameComponent implements OnInit {
 
     }
 
-   public ngOnInit() {
+    public ngOnInit() {
         this.getLastGame();
     }
 
-   public getLastGame() {
+    public getLastGame() {
         this.gamesService.getLastGame().subscribe(
-           (game) => {
+            (game) => {
                 this.game = game;
                 this.game.awayTeamLogoUrl = this.logoService.getLogoPath(this.game.AwayTeam, 30);
                 this.game.homeTeamLogoUrl = this.logoService.getLogoPath(this.game.HomeTeam, 30);
             },
-            (error) => this.errorMessage = <any>error);
+            (error) => this.errorMessage = <any> error);
     }
 }

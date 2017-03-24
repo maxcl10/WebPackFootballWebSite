@@ -16,15 +16,14 @@ export class ArticleComponent implements OnInit {
     public article: Article;
     public errorMessage: string;
     public isAuthenticated: boolean;
+    private sub: any;
 
     constructor(private articleService: ArticlesService, private route: ActivatedRoute, private router: Router, private authenticationService: AuthenticationService, private titleService: Title) {
         this.article = new Article();
     }
 
-    private sub: any;
-
     public ngOnInit() {
-        this.sub = this.route.params.subscribe(params => {
+        this.sub = this.route.params.subscribe((params) => {
             let id = params['id']; // (+) converts string 'id' to a number
             this.getArticle(id);
         });
@@ -35,9 +34,9 @@ export class ArticleComponent implements OnInit {
         this.articleService.getArticle(id).subscribe(
             (article) => {
                 this.article = article;
-                this.titleService.setTitle(article.title)
+                this.titleService.setTitle(article.title);
             },
-            (error) => this.errorMessage = <any>error);
+            (error) => this.errorMessage = <any> error);
     }
 
     public deleteArticle() {
@@ -46,7 +45,7 @@ export class ArticleComponent implements OnInit {
 
         this.articleService.deleteArticle(this.article.id).subscribe(
             (result) => this.goToAdmin(),
-            (error) => this.errorMessage = <any>error)
+            (error) => this.errorMessage = <any> error);
     }
 
     public goToEdit() {

@@ -18,9 +18,17 @@ import {
 import { CommonModule } from '@angular/common';
 import { SeoService } from './shared/services/seo.service';
 
+//  import { TinymceModule } from 'ng2-tinymce-alt';
+import { TinymceModule } from 'angular2-tinymce';
+
+//  import { Ng2Summernote } from 'ng2-summernote/ng2-summernote';
+  // import { TinymceComponent } from 'ng2-tinymce';
+
 /*
  * Platform and Environment providers/directives/pipes
  */
+// import { CKEditorModule } from 'ng2-ckeditor';
+
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 
@@ -73,7 +81,6 @@ import { SponsorComponent } from './sponsors/sponsor/sponsor.component';
 // import { SummernoteComponent } from './summernote.component';
 // import { UNITYTinyMCE } from './unity-tinymce';
 
-// import { Ng2Summernote } from 'ng2-summernote/ng2-summernote';
 // import { ChartsModule } from 'ng2-charts/ng2-charts';
 // import {UPLOAD_DIRECTIVES} from 'ng2-file-uploader/ng2-file-uploader';
 // import { UPLOAD_DIRECTIVES } from 'ng2-uploader/ng2-uploader';
@@ -125,7 +132,7 @@ type StoreType = {
     NewGameComponent,
     EditGameComponent,
     LeagueTablePageComponent,
-    // Ng2Summernote,
+    // Ng2Summernote,    
     NextGameComponent,
     PlayersCarouselComponent,
     LeagueTableSmallComponent,
@@ -143,11 +150,13 @@ type StoreType = {
     BrowserModule,
     BrowserModule,
     /*ChartsModule,*/
+    TinymceModule,
     FormsModule,
     HttpModule,
     CommonModule,
+    // CKEditorModule,
     /* DragulaModule,    */
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

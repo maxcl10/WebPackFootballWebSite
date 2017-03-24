@@ -1,10 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
-import {Observable} from 'rxjs/Observable';
-
-
-import {Player} from '../shared/player.model'
-import {PlayersService} from '../shared/players.service';
+import { Player } from '../shared/player.model';
+import { PlayersService } from '../shared/players.service';
 
 @Component({
     selector: 'new-player',
@@ -14,30 +12,25 @@ import {PlayersService} from '../shared/players.service';
 
 export class NewPlayerComponent {
 
-
-    player: Player;
-    errorMessage: string;
-    successfull: boolean;
-
+    public player: Player;
+    public errorMessage: string;
+    public successfull: boolean;
 
     constructor(private playersService: PlayersService) {
         this.player = new Player();
         this.successfull = false;
     }
 
-    savePlayer() {
+    public savePlayer() {
         this.playersService.createplayer(this.player).subscribe(
-            player => {
+            (player) => {
                 this.successfull = true;
                 this.errorMessage = null;
             },
-            error => this.errorMessage = <any>error);
+            (error) => this.errorMessage = <any> error);
     }
 
-    goBack() {
+    public goBack() {
         window.history.back();
     }
 }
-
-
-

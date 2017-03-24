@@ -1,20 +1,21 @@
-import {Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import {Player} from '../shared/player.model'
-import {PlayersService} from '../shared/players.service';
-import {FrDatePipeComponent} from '../../shared/pipes/fr-date-pipe'
+import { Player } from '../shared/player.model';
+import { PlayersService } from '../shared/players.service';
+import { FrDatePipeComponent } from '../../shared/pipes/fr-date-pipe';
 
 @Component({
     selector: 'player',
     templateUrl: './player.component.html',
-    providers: [PlayersService],  
+    providers: [PlayersService],
 })
 
 export class PlayerComponent implements OnInit {
 
-    player: Player;
-    errorMessage: string;
+    public player: Player;
+    public errorMessage: string;
+    private sub: any;
 
     public get playerAge(): number {
         return this.getAge(this.player.dateOfBirth);
@@ -24,52 +25,43 @@ export class PlayerComponent implements OnInit {
         this.player = new Player();
     }
 
-    private sub: any;
-
-    ngOnInit() {
-        this.sub = this.route.params.subscribe(params => {
+    public ngOnInit() {
+        this.sub = this.route.params.subscribe((params) => {
             let id = params['id'];
-            this.getPlayer(id);;
+            this.getPlayer(id);
         });
     }
 
-    getPlayer(id: string) {
+    public getPlayer(id: string) {
         this.playerService.getplayer(id).subscribe(
-            player => {
+            (player) => {
                 this.player = player;
             },
-            error => this.errorMessage = <any>error);
+            (error) => this.errorMessage = <any> error);
     }
 
-    getAge(dateString) {
-        var today = new Date();
-        var birthDate = new Date(dateString);
-        var age = today.getFullYear() - birthDate.getFullYear();
-        var m = today.getMonth() - birthDate.getMonth();
+    public getAge(dateString) {
+        let today = new Date();
+        let birthDate = new Date(dateString);
+        let age = today.getFullYear() - birthDate.getFullYear();
+        let m = today.getMonth() - birthDate.getMonth();
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
             age--;
         }
         return age;
     }
 
-    deletePlayer() {
+   public deletePlayer() {
         this.playerService.deleteplayer(this.player.id).subscribe(
-            result => this.goBack(),
-            error => this.errorMessage = <any>error)
+            (result) => this.goBack(),
+            (error) => this.errorMessage = <any> error);
     }
 
-    goToEdit() {
+    public goToEdit() {
         this.router.navigate(['/editPlayer', this.player.id]);
     }
 
-
-    goBack() {
+    public goBack() {
         window.history.back();
     }
-
-
-
 }
-
-
-

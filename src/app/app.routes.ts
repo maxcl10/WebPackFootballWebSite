@@ -104,4 +104,3 @@ export const ROUTES: Routes =
     component: EditGameComponent
   },
   ];
-  

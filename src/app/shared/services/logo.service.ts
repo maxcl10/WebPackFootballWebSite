@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class LogoService {
 
-    constructor() { }
-
     public getLogoPath(team: string, size: number) {
         let baseUrl = '../../../assets/img/logos/';
         switch (team) {
@@ -67,7 +65,7 @@ export class LogoService {
                 return baseUrl + '/azzuri/azzuri_' + size + 'x' + size + '.png';
             case 'Huningue F.C':
             case 'Huningue A.S.':
-                return baseUrl + "/huningue/huningue_" + size + "x" + size + ".png"
+                return baseUrl + '/huningue/huningue_' + size + 'x' + size + '.png';
             default:
                 break;
         }

@@ -1,35 +1,30 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
+import { User } from '../models/user';
 
-
-import  {User} from '../models/user';
-
-
-var users = [
+let users = [
   new User('admin@admin.com', 'p@ssw0rd'),
 ];
 
 @Injectable()
 export class AuthenticationService {
 
-  constructor(  ) { }
-
-  logout() {
-    sessionStorage.removeItem("user");  
+  public logout() {
+    sessionStorage.removeItem('user');
   }
 
-  login(user: User) {
-    var authenticatedUser = users.find(u => u.email === user.email);
+  public login(user: User) {
+    let authenticatedUser = users.find((u) => u.email === user.email);
 
-    if (authenticatedUser && (authenticatedUser.password == user.password)) {
-      sessionStorage.setItem("user", authenticatedUser.email);
+    if (authenticatedUser && (authenticatedUser.password === user.password)) {
+      sessionStorage.setItem('user', authenticatedUser.email);
       return true;
     }
     return false;
   }
 
-  checkCredentials() {
-    if (sessionStorage.getItem("user") === null) {
-  return false;
+  public checkCredentials() {
+    if (sessionStorage.getItem('user') === null) {
+      return false;
     }
 
     return true;

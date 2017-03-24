@@ -34,7 +34,7 @@ export class NewGameComponent {
             (game) => {
                 this.goBack();
             },
-            (error) => this.errorMessage = <any>error);
+            (error) => this.errorMessage = <any> error);
     }
 
     public getTeams() {
@@ -42,7 +42,7 @@ export class NewGameComponent {
             (teams) => {
                 this.teams = teams;
             },
-            (error) => this.errorMessage = <any>error);
+            (error) => this.errorMessage = <any> error);
     }
 
     public goBack() {
@@ -50,8 +50,8 @@ export class NewGameComponent {
     }
 
     public showNewTeamPanel() {
-        //todo: find workarround 
-        // $('#newTeamModal').modal('show')  
+        // todo: find workarround
+        // $('#newTeamModal').modal('show')
     }
 
     public onTeamAdded(team: Team) {

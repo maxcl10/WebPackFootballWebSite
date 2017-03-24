@@ -14,8 +14,13 @@
             <div class="form-group">
                 <label for="exampleInputPassword1">Content</label>
                 <!--<textarea id="txtBody" required rows="20" class="form-control" placeholder="Content" [(ngModel)]='article.body' ngControl="body"></textarea>-->
-                  <!--<ng2-summernote [(ngModel)]="article.body" height="500"></ng2-summernote>-->
-                 
+                 <!--<ng2-summernote [(ngModel)]="body" [height]="500"></ng2-summernote>-->
+              <app-tinymce [(ngModel)]='article.body'></app-tinymce>
+                 <!--<ckeditor
+    [(ngModel)]="body" 
+   
+    debounce="500">
+  </ckeditor>-->
                 <!--<summernote [content]="article.body" (contentChanged)="descriptionChanged($event)" ></summernote>                  -->
             </div>
         </div>

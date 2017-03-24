@@ -7,7 +7,7 @@ import { LogoService } from '../../shared/services/logo.service';
 import { Title } from '@angular/platform-browser';
 import { SeoService } from '../../shared/services/seo.service';
 
-@Component({   
+@Component({
     selector: 'games-list',
     templateUrl: './games-list.component.html',
     providers: [GamesService, LogoService],
@@ -20,7 +20,7 @@ export class GamesComponent implements OnInit {
     }
 
     public ngOnInit() {
-        this.seoService.setTitle("F.C Uffheim - Calendrier");
+        this.seoService.setTitle('F.C Uffheim - Calendrier');
         this.getGames();
     }
 
@@ -33,7 +33,7 @@ export class GamesComponent implements OnInit {
                 });
                 this.games = games;
             },
-            (error) => this.errorMessage = <any>error);
+            (error) => this.errorMessage = <any> error);
     }
 
     public getWeb(game: Game) {

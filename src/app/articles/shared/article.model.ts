@@ -3,5 +3,5 @@ export class Article {
     public title: string;
     public body: string;
     public publishedDate: Date;
-    public publisher: string;  
+    public publisher: string;
 }

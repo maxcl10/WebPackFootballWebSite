@@ -43,6 +43,6 @@ export class TodayGameComponent implements OnInit {
 
                 this.isToday = this.isGameToday();
             },
-            (error) => this.errorMessage = <any>error);
+            (error) => this.errorMessage = <any> error);
     }
 }

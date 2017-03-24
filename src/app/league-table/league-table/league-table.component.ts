@@ -33,10 +33,10 @@ export class LeagueTableComponent implements OnInit {
         this.rankingService.getRankings().subscribe(
             (rankings) => {
                 rankings.forEach((element) => {
-                    element.imageUrl = this.logoService.getLogoPath(element.team, 30)
+                    element.imageUrl = this.logoService.getLogoPath(element.team, 30);
                 });
                 this.rankings = rankings;
             },
-            (error) => this.errorMessage = <any>error);
+            (error) => this.errorMessage = <any> error);
     }
 }

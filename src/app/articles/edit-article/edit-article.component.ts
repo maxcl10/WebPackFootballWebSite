@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Article, ArticlesService } from '../shared/index';
+import { TinymceModule } from 'angular2-tinymce';
 
 @Component({
     selector: 'edit-article',

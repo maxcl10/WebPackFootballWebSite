@@ -1,5 +1,5 @@
-import {Component, OnInit } from '@angular/core';
-import { LeagueTableComponent}  from '../league-table/league-table.component'
+import { Component, OnInit } from '@angular/core';
+import { LeagueTableComponent }  from '../league-table/league-table.component';
 import { Title }     from '@angular/platform-browser';
 
 @Component({
@@ -8,16 +8,11 @@ import { Title }     from '@angular/platform-browser';
 })
 
 export class LeagueTablePageComponent implements OnInit {
-
-    /**
-     *
-     */
+    
     constructor(private titleService: Title) {
-
-
     }
 
-    ngOnInit() {
-        this.titleService.setTitle("F.C Uffheim - Classement");
+    public ngOnInit() {
+        this.titleService.setTitle('F.C Uffheim - Classement');
     }
 }

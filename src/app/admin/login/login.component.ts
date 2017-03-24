@@ -1,12 +1,12 @@
-import {Component, ElementRef} from '@angular/core';
-import {AuthenticationService} from '../../services/authentication.service'
-import {Router} from '@angular/router';
-import {User} from '../../models/user';
+import { Component, ElementRef } from '@angular/core';
+import { AuthenticationService } from '../../services/authentication.service';
+import { Router } from '@angular/router';
+import { User } from '../../models/user';
 
 @Component({
     selector: 'login-form',
     providers: [AuthenticationService],
-    templateUrl: "./login.component.html"
+    templateUrl: './login.component.html'
 })
 
 export class LoginComponent {
@@ -16,16 +16,15 @@ export class LoginComponent {
 
     constructor(private service: AuthenticationService, private router: Router) { }
 
-    login() {       
+    public login() {
         if (!this.service.login(this.user)) {
             this.errorMessage = 'Failed to login';
-        }
-        else {
+        } else {
             this.router.navigate(['/admin']);
         }
-    }    
+    }
 
-    goBack() {
+    public goBack() {
         window.history.back();
     }
 }

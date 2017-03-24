@@ -40,6 +40,6 @@ export class NextGameComponent implements OnInit {
                 this.game.awayTeamLogoUrl = this.logoService.getLogoPath(this.game.AwayTeam, 30);
                 this.game.homeTeamLogoUrl = this.logoService.getLogoPath(this.game.HomeTeam, 30);
             },
-            (error) => this.errorMessage = <any>error);
+            (error) => this.errorMessage = <any> error);
     }
 }

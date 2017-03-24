@@ -8,29 +8,21 @@ import { Component, OnInit } from '@angular/core';
 
 export class UploadRankingComponent {
 
-  uploadFile: any;
-  success: boolean = false;
-  error: boolean;
+  public uploadFile: any;
+  public success: boolean = false;
+  public error: boolean;
+  public errorMessage: string;
 
-
-  options: Object = {
+  public options: Object = {
     url: 'http://88.121.16.195/Services/FcHagenthalService/api/ranking'
   };
 
-
-  errorMessage: string;
-
-  constructor() {
-
-  }
-
-  handleUpload(data: any): void {
+  public handleUpload(data: any): void {
     if (data && data.response) {
-      if (data.response == "true") {
+      if (data.response === true) {
         this.success = true;
         this.error = false;
-      }
-      else {
+      } else {
         data = JSON.parse(data.response);
         this.uploadFile = data;
         this.error = true;
@@ -39,9 +31,7 @@ export class UploadRankingComponent {
     }
   }
 
-  goBack() {
+  public goBack() {
     window.history.back();
   }
-
-
 }

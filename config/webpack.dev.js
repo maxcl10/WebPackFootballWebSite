@@ -175,10 +175,7 @@ module.exports = function (options) {
             '@angular/http',
             '@angular/router',
             '@angularclass/hmr',
-            'rxjs'
-            // 'ng2-summernote'
-            // 'jquery',
-            // 'bootstrap/dist/js/bootstrap'
+            'rxjs',          
           ]
         },
         dllDir: helpers.root('dll'),

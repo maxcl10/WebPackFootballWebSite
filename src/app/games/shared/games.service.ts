@@ -3,13 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
-import { Game } from './game.model'
-
-
+import { Game } from './game.model';
 
 @Injectable()
 export class GamesService {
-    private gameUrl = 'http://88.121.16.195/Services/FcHagenthalService/api/games/';       
+
+    private gameUrl = 'http://88.121.16.195/Services/FcHagenthalService/api/games/';
     private nextGameUrl = 'http://88.121.16.195/Services/FcHagenthalService/api/nextgame/';
     private lastGameUrl = 'http://88.121.16.195/Services/FcHagenthalService/api/previousgame/';
 
@@ -17,51 +16,50 @@ export class GamesService {
 
     }
 
-   public getGame(id: string): Observable<Game> {
-        return this.http.get(this.gameUrl + "/" + id)
+    public getGame(id: string): Observable<Game> {
+        return this.http.get(this.gameUrl + '/' + id)
             .map((response) => response.json())
             .catch(this.handleError);
     }
 
-  public  getGames(): Observable<Game[]> {
+    public getGames(): Observable<Game[]> {
 
         return this.http.get(this.gameUrl)
             .map((response) => response.json())
             .catch(this.handleError);
     }
 
-   public getNextGame(): Observable<Game> {
+    public getNextGame(): Observable<Game> {
         return this.http.get(this.nextGameUrl)
             .map((response) => response.json())
             .catch(this.handleError);
     }
 
-  public  getLastGame(): Observable<Game> {
+    public getLastGame(): Observable<Game> {
         return this.http.get(this.lastGameUrl)
             .map((response) => response.json())
             .catch(this.handleError);
     }
 
-  public  createGame(Game: Game): Observable<Game> {                  
+    public createGame(Game: Game): Observable<Game> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.gameUrl, JSON.stringify(Game), { headers: headers })
+        return this.http.post(this.gameUrl, JSON.stringify(Game), { headers })
             .map((response) => response.json())
             .catch(this.handleError);
     }
 
-
-   public updateGame(Game: Game): Observable<Game> {
+    public updateGame(Game: Game): Observable<Game> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.put(this.gameUrl + "/" + Game.Id, JSON.stringify(Game), { headers: headers })
+        let url = this.gameUrl + '/' + Game.Id;
+        return this.http.put(url, JSON.stringify(Game), { headers })
             .map((response) => response.json())
             .catch(this.handleError);
     }
 
+    public deleteGame(id: string) {
 
-   public deleteGame(id: string) {
-      
-        return this.http.delete(this.gameUrl + "/" + id)
-            .map(response => response.json())
+        return this.http.delete(this.gameUrl + '/' + id)
+            .map((response) => response.json())
             .catch(this.handleError);
     }
 
@@ -73,5 +71,3 @@ export class GamesService {
         return Observable.throw(errMsg);
     }
 }
-
-

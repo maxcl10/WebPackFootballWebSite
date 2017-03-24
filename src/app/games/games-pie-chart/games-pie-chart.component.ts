@@ -3,7 +3,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { StatsService } from '../../stats/shared/stats.service';
 
-@Component({  
+@Component({
   selector: 'games-pie-chart',
   templateUrl: './games-pie-chart.component.html',
   // directives: [CHART_DIRECTIVES, NgClass, CORE_DIRECTIVES, FORM_DIRECTIVES],
@@ -39,7 +39,7 @@ export class GamesPieChartComponent implements OnInit {
         let wonCount = res.filter((o) => o === 'G').length;
         this.doughnutChartData = [wonCount, drawCount, lossCount];
       },
-      (error) => this.errorMessage = <any>error);
+      (error) => this.errorMessage = <any> error);
 
     this.doughnutChartLabels = ['Gagnés', 'Nuls', 'Perdus'];
     this.doughnutChartType = 'doughnut';

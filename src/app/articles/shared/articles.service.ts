@@ -1,9 +1,9 @@
-import {Http, Response, Headers } from '@angular/http';
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import { Http, Response, Headers } from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
-import {Article} from '../shared/article.model'
+import { Article } from '../shared/article.model';
 
 @Injectable()
 export class ArticlesService {
@@ -13,39 +13,37 @@ export class ArticlesService {
 
     }
 
-    getArticle(id: string): Observable<Article> {
-     
-        return this.http.get(this.articleUrl + "/" + id)
-            .map(response => response.json())
+    public getArticle(id: string): Observable<Article> {
+
+        return this.http.get(this.articleUrl + '/' + id)
+            .map((response) => response.json())
             .catch(this.handleError);
     }
 
-    getArticles(): Observable<Article[]> {
+    public getArticles(): Observable<Article[]> {
 
         return this.http.get(this.articleUrl)
-            .map(response => response.json())
+            .map((response) => response.json())
             .catch(this.handleError);
     }
 
-    createArticle(article: Article): Observable<Article> {
+    public createArticle(article: Article): Observable<Article> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.articleUrl, JSON.stringify(article), { headers: headers })
-            .map(response => response.json())
+        return this.http.post(this.articleUrl, JSON.stringify(article), { headers })
+            .map((response) => response.json())
             .catch(this.handleError);
     }
 
-
-    updateArticle(article: Article): Observable<Article> {
+    public updateArticle(article: Article): Observable<Article> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.put(this.articleUrl + "/" + article.id, JSON.stringify(article), { headers: headers })
-            .map(response => response.json())
+        return this.http.put(this.articleUrl + '/' + article.id, JSON.stringify(article), { headers })
+            .map((response) => response.json())
             .catch(this.handleError);
     }
 
-
-    deleteArticle(id: string) {    
-        return this.http.delete(this.articleUrl + "/" + id)
-            .map(response => response.json())
+    public deleteArticle(id: string) {
+        return this.http.delete(this.articleUrl + '/' + id)
+            .map((response) => response.json())
             .catch(this.handleError);
     }
 
@@ -57,5 +55,3 @@ export class ArticlesService {
         return Observable.throw(errMsg);
     }
 }
-
-
