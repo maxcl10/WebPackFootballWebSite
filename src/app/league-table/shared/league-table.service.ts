@@ -7,6 +7,7 @@ import { Ranking } from './league-table.model';
 @Injectable()
 export class LeagueRankingsService {
     private rankingUrl = 'http://88.121.16.195/Services/FcHagenthalService/api/ranking';
+    private updateLafaRankingUrl = 'http://88.121.16.195/Services/FcHagenthalService/UpdateRankingFromLafa';
 
     constructor(private http: Http) {
 
@@ -18,10 +19,15 @@ export class LeagueRankingsService {
     //         .catch(this.handleError);
     // }
 
-   public getRankings(): Observable<Ranking[]> {
-
+    public getRankings(): Observable<Ranking[]> {
         return this.http.get(this.rankingUrl)
             .map((response) => response.json())
+            .catch(this.handleError);
+    }
+
+    public updateRankingFromLafa() {
+        return this.http.get(this.updateLafaRankingUrl)
+            .map((response) => response)
             .catch(this.handleError);
     }
 

@@ -54,7 +54,7 @@ export class GamesService {
         return this.http.put(url, JSON.stringify(Game), { headers })
             .map((response) => response.json())
             .catch(this.handleError);
-    }
+    } 
 
     public deleteGame(id: string) {
         console.debug('Delete Game ' + id);

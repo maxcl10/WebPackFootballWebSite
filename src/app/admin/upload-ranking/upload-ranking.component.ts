@@ -1,9 +1,11 @@
 
 import { Component, OnInit } from '@angular/core';
+import { LeagueRankingsService } from '../../league-table/shared/league-table.service';
 
 @Component({
   selector: 'upload-ranking',
   templateUrl: './upload-ranking.component.html',
+  providers: [LeagueRankingsService]
 })
 
 export class UploadRankingComponent {
@@ -17,6 +19,9 @@ export class UploadRankingComponent {
     url: 'http://88.121.16.195/Services/FcHagenthalService/api/ranking'
   };
 
+  constructor(private leagueService: LeagueRankingsService) {
+  }
+
   public handleUpload(data: any): void {
     if (data && data.response) {
       if (data.response === true) {
@@ -29,6 +34,14 @@ export class UploadRankingComponent {
         this.success = false;
       }
     }
+  }
+
+  public updateRankingFromLafa() {
+    this.leagueService.updateRankingFromLafa().subscribe(
+      (res) => {
+        this.success = true;
+      },
+      (error) => this.errorMessage = <any>error);
   }
 
   public goBack() {
