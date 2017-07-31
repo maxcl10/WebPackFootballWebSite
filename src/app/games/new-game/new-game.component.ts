@@ -49,9 +49,8 @@ export class NewGameComponent {
         window.history.back();
     }
 
-    public showNewTeamPanel() {
-        // todo: find workarround
-        // $('#newTeamModal').modal('show')
+    public showNewTeamPanel() {        
+         $('#newTeamModal').modal('show')
     }
 
     public onTeamAdded(team: Team) {

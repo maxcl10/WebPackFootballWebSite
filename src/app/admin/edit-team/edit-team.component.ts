@@ -23,7 +23,7 @@ export class EditTeamComponent implements OnInit {
 
     constructor(private teamService: TeamsService) {
         // Equipe1
-        this.teamId = '3707ef89-38c6-4f94-bc97-98238eaef435';
+        this.teamId = 'b8bc86da-9eea-4820-a5d5-c9f57b3b7d80';
         // Equipe 2 3707ef89-38c6-4f94-bc97-98238eaef435
     }
 
