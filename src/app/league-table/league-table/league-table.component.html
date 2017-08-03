@@ -11,9 +11,9 @@
         <th class="hidden-xs">+/-</th>
         <th>Pts</th>
     </tr>
-    <tr *ngFor="let item of rankings" [ngClass]="{'mauve': item.team == 'Uffheim F.C.', 'border-bottom': item.position == 1, 'border-top': item.position == 13}">
+    <tr *ngFor="let item of rankings" [ngClass]="{'mauve': item.team == 'Uffheim F.C.', 'border-bottom': item.position == 2, 'border-top': item.position == 12}">
 
-        <td [ngClass]="{'text-success': item.position== 1 ||item.position== 1, 'text-danger':  item.position>= 13}">{{item.position}}</td>
+        <td [ngClass]="{'text-success': item.position<= 2, 'text-danger':  item.position>= 12}">{{item.position}}</td>
 
         <td><img [src]="item.imageUrl"> {{item.team}}</td>
         <!-- <i class="fa fa-shirtsinbulk green-white" aria-hidden="true"  ></i> -->

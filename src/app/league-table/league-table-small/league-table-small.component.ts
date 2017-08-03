@@ -35,12 +35,12 @@ export class LeagueTableSmallComponent implements OnInit {
                     latestTeams.forEach((element) => {
                         this.rankings.push(element);
                     });
-                } else if (myTeamPosition >= 12) {
+                } else if (myTeamPosition >= 11) {
                     // We want to display the 2 first and the 3 latest
                     let firstTeams = rankings.filter((o) => o.position <= 2);
                     this.rankings = firstTeams;
 
-                    let latestTeams = rankings.filter((o) => o.position > 11);
+                    let latestTeams = rankings.filter((o) => o.position > 10);
                     latestTeams.forEach((element) => {
                         this.rankings.push(element);
                     });

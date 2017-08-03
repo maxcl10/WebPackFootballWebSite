@@ -83,7 +83,7 @@ import { SponsorComponent } from './sponsors/sponsor/sponsor.component';
 
 // import { ChartsModule } from 'ng2-charts/ng2-charts';
 // import {UPLOAD_DIRECTIVES} from 'ng2-file-uploader/ng2-file-uploader';
-// import { UPLOAD_DIRECTIVES } from 'ng2-uploader/ng2-uploader';
+//  import { UPLOAD_DIRECTIVES } from 'ng2-uploader/ng2-uploader';
 
 import { FrDatePipeComponent } from './shared/pipes/fr-date-pipe';
 // import { DragulaModule } from 'ng2-dragula/ng2-dragula';
@@ -144,7 +144,7 @@ type StoreType = {
     NewTeamComponent,
     LeagueTableComponent,
     PlayerDetailsSmallComponent,
-    /*UPLOAD_DIRECTIVES,*/
+    // UPLOAD_DIRECTIVES,
     EditTeamComponent],
   imports: [ // import Angular's modules
     BrowserModule,
