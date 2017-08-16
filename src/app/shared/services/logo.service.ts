@@ -88,6 +88,8 @@ export class LogoService {
                 return baseUrl + 'Altkirch/Altkirch_' + size + 'x' + size + '.png'; 
                 case 'Hagenbach EHB2016':
                 return baseUrl + 'Hagenbach/Hagenbach_' + size + 'x' + size + '.png'; 
+                 case 'Helfrantzkirch ASCCO ':
+                return baseUrl + 'helfrantzkirch/helfrantzkirch_' + size + 'x' + size + '.png'; 
                             default:
                 break;
         }
