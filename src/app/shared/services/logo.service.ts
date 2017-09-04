@@ -42,6 +42,7 @@ export class LogoService {
             case 'Racing H.W. 96':
                 return baseUrl + 'Holtzwihr/Holtzwihr_' + size + 'x' + size + '.png';
             case 'Wittenheim U.S.':
+            case 'Wittenheim U.S. 2':
                 return baseUrl + 'Wittenheim/Wittenheim_' + size + 'x' + size + '.png';
             case 'Colmar S.R.':
                 return baseUrl + 'colmar/colmar_' + size + 'x' + size + '.png';
@@ -66,31 +67,33 @@ export class LogoService {
             case 'Huningue F.C':
             case 'Huningue A.S.':
                 return baseUrl + 'huningue/huningue_' + size + 'x' + size + '.png';
-                  case 'Kembs F.C.':
+            case 'Kembs F.C.':
                 return baseUrl + 'kembs/kembs_' + size + 'x' + size + '.png';
-                case 'Mulhouse R.C':
-                case 'Mulhouse R.C.':
-                return baseUrl + 'racing_mulhouse/racing_mulhouse_' + size + 'x' + size + '.png';   
-                 case 'Ballersdorf F.C.':
-                return baseUrl + 'ballersdorf/ballersdorf_' + size + 'x' + size + '.png';        
-                 case 'Bantzenheim F.C.':
-                return baseUrl + 'bantzenheim/bantzenheim_' + size + 'x' + size + '.png';         
-                 case 'Mulhouse Bourtzwiller C.S.':
-                   case 'Mulhouse Bourtz C.S.':
-                return baseUrl + 'bourtzwiller/bourtzwiller_' + size + 'x' + size + '.png';         
-                 case 'Hirsingue U.S.':
-                return baseUrl + 'hirsingue/hirsingue_' + size + 'x' + size + '.png';         
-                 case 'Mulhouse Real C.F.':
-                return baseUrl + 'real_mulhouse/realmulhouse_' + size + 'x' + size + '.png'; 
-                case 'Merxheim F.C.':
-                return baseUrl + 'merxheim/merxheim_' + size + 'x' + size + '.png'; 
-                case 'Altkirch F.C.':
-                return baseUrl + 'Altkirch/Altkirch_' + size + 'x' + size + '.png'; 
-                case 'Hagenbach EHB2016':
-                return baseUrl + 'Hagenbach/Hagenbach_' + size + 'x' + size + '.png'; 
-                 case 'Helfrantzkirch ASCCO ':
-                return baseUrl + 'helfrantzkirch/helfrantzkirch_' + size + 'x' + size + '.png'; 
-                            default:
+            case 'Mulhouse R.C':
+            case 'Mulhouse R.C.':
+                return baseUrl + 'racing_mulhouse/racing_mulhouse_' + size + 'x' + size + '.png';
+            case 'Ballersdorf F.C.':
+            case 'Ballersdorf EPA':
+                return baseUrl + 'ballersdorf/ballersdorf_' + size + 'x' + size + '.png';
+            case 'Bantzenheim F.C.':
+                return baseUrl + 'bantzenheim/bantzenheim_' + size + 'x' + size + '.png';
+            case 'Mulhouse Bourtzwiller C.S.':
+            case 'Mulhouse Bourtz C.S.':
+                return baseUrl + 'bourtzwiller/bourtzwiller_' + size + 'x' + size + '.png';
+            case 'Hirsingue U.S.':
+                return baseUrl + 'hirsingue/hirsingue_' + size + 'x' + size + '.png';
+            case 'Mulhouse Real C.F.':
+                return baseUrl + 'real_mulhouse/realmulhouse_' + size + 'x' + size + '.png';
+            case 'Merxheim F.C.':
+                return baseUrl + 'merxheim/merxheim_' + size + 'x' + size + '.png';
+            case 'Altkirch F.C.':
+            case 'Altkirch A.S.':
+                return baseUrl + 'Altkirch/Altkirch_' + size + 'x' + size + '.png';
+            case 'Hagenbach EHB2016':
+                return baseUrl + 'Hagenbach/Hagenbach_' + size + 'x' + size + '.png';
+            case 'Helfrantzkirch ASCCO ':
+                return baseUrl + 'helfrantzkirch/helfrantzkirch_' + size + 'x' + size + '.png';
+            default:
                 break;
         }
     }
