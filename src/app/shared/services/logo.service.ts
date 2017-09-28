@@ -93,6 +93,10 @@ export class LogoService {
                 return baseUrl + 'Hagenbach/Hagenbach_' + size + 'x' + size + '.png';
             case 'Helfrantzkirch ASCCO ':
                 return baseUrl + 'helfrantzkirch/helfrantzkirch_' + size + 'x' + size + '.png';
+                   case 'Riespach A.S.':
+                return baseUrl + 'riespach/riespach_' + size + 'x' + size + '.png';
+                   case 'Carspach S.G.':
+                return baseUrl + 'carspach/carspach_' + size + 'x' + size + '.png';
             default:
                 break;
         }
